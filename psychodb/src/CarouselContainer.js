@@ -14,7 +14,7 @@ const CarouselContainer = ({ data }) => {
 								width: '100%',
 								objectFit: 'cover',
 								overflow: 'hidden',
-								background: 'purple',
+								background: 'gray',
 							}}
 							src={item.img}
 							alt={item.title}

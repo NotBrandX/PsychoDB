@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
-const PsiDetail = ({ error, objectDetail, show, handleClose }) => {
+const PsiDetail = ({ error, psiDetail, show, handleClose }) => {
 	if (!error) {
 		return (
 			<Modal
@@ -12,20 +12,18 @@ const PsiDetail = ({ error, objectDetail, show, handleClose }) => {
 				onHide={handleClose}
 				size='xl'>
 				<Modal.Header closeButton>
-					<Modal.Title>{objectDetail.psiObject.name}</Modal.Title>
+					<Modal.Title>{psiDetail.psiPowers.name}</Modal.Title>
 				</Modal.Header>
-				{objectDetail.psiObject.img && (
-					<Image fluid src={objectDetail.psiObject.img.url} />
-				)}
+				{psiDetail.img && <Image fluid src={psiDetail.img} />}
 				<Modal.Body>
-					<p>{objectDetail.psiObject.label.description}</p>
+					<h1>{psiDetail.name}</h1>
 					<h4>Description:</h4>
 					<p>
-						{objectDetail.psiObjectPage.description ? (
-							objectDetail.psiObjectPage.description
+						{/* {psiDetail.psiPowers.description ? (
+							psiDetail.psiPowers.description
 						) : (
 							<span style={{ fontStyle: 'italic' }}>Not available</span>
-						)}
+						)} */}
 					</p>
 				</Modal.Body>
 				<Modal.Footer>

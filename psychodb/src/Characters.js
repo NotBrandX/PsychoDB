@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Axios from 'axios';
 import Detail from './Detail';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
@@ -19,7 +20,7 @@ const Characters = ({ images }) => {
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
 	const [activeItem, setActiveItem] = useState(null);
-	const [searchOptions, setSearchOptions] = useState(null)
+	const [detail, setDetail] = useState(null)
 
 	const handleShow = () => {
 		setShow(true);
@@ -35,18 +36,17 @@ const Characters = ({ images }) => {
 		setError(true);
 	};
 
-	const getDetail = (object) => {
-		fetch(`${searchOptions.url}/characters?name=${object.name}`)
-			.then((res) => res.json())
+	const getDetail = (name) => {
+		Axios.get(`https://psychonauts-api.herokuapp.com/api/characters?name=${name}`)
 			.then((res) => {
-				setActiveItem(res);
+				console.log(res);
+				setActiveItem(res.data)
+				handleShow();
 			})
-			.then((res) => handleShow())
 			.catch((err) => {
 				handleError();
-				handleShow();
 			});
-	};
+	}
 
 	return (
 		<CardColumns>
@@ -56,8 +56,8 @@ const Characters = ({ images }) => {
 						{object.img && (
 							<Card.Img
 								variant='top'
-								src={object.img ? object.img.url : ''}
-								alt={object.name}
+								src={object.img ? object.img : ''}
+								alt={object.name} 
 							/>
 						)}
 						<Card.Body>
@@ -68,7 +68,7 @@ const Characters = ({ images }) => {
 							)}
 							<Card.Text className='text-muted'>{object.name}</Card.Text>
 							<Button
-								onClick={() => getDetail(object.id)}
+								onClick={() => getDetail(object.name)}
 								variant='outline-dark'>
 								Details
 							</Button>
