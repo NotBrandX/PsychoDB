@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import data from './data.json'
-import characterObjects from './characterobjects.json'
-import psiObjects from './psiobjects.json'
 import { Switch, Route, Redirect } from 'react-router';
 import CarouselContainer from './CarouselContainer';
 import Navigation from './Navigation';
@@ -15,20 +13,35 @@ function App() {
   const [searchOptions, setSearchOptions] = useState({
 		url: 'https://psychonauts-api.herokuapp.com/api',
 	});
-  const [characterImages, setCharacterImages] = useState(characterObjects);
-  const [psiImages, setPsiImages] = useState(psiObjects);
+  const [characterImages, setCharacterImages] = useState([]);
+  const [psiImages, setPsiImages] = useState([]);
 
-  // const getCharacterImages = () => {
-	// 	const url = `${url}/characters?name={searchOptions}`;
-	// 	fetch(url)
-	// 		.then((res) => res.json())
-	// 		.then((res) => setCharacterImages(res.characterObjects))
-	// 		.catch(console.error);
-	// };
+  const getCharacterImages = () => {
+		const url = `${searchOptions.url}/characters`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+      setCharacterImages(res)})
+			.catch(console.error);
+	};
 
-	// useEffect(() => {
-	// 	getCharacterImages();
-	// }, []);
+	useEffect(() => {
+		getCharacterImages();
+	}, []);
+  
+const getPsiImages = () => {
+	const url = `${searchOptions.url}/Powers`;
+	fetch(url)
+		.then((res) => res.json())
+		.then((res) => {
+			setPsiImages(res);
+		})
+		.catch(console.error);
+};
+
+useEffect(() => {
+	getPsiImages();
+}, []);
 
 	return (
 		<>
@@ -48,6 +61,7 @@ function App() {
 							<Characters
 								images={characterImages}
 								searchOptions={searchOptions}
+                // getCharacterImages={getCharacterImages}
 							/>
 						)}
 					/>
@@ -55,7 +69,11 @@ function App() {
 						exact
 						path='/psipowers'
 						render={() => (
-							<PsiPowers images={psiImages} searchOptions={searchOptions} />
+							<PsiPowers 
+              images={psiImages} 
+              searchOptions={searchOptions} 
+              // getPsiImages={getPsiImages}
+              />
 						)}
 					/>
 					<Route

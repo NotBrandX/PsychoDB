@@ -23,7 +23,7 @@ function Search({ searchOptions }) {
 
 	const getData = (searchString) => {
 		if (searchString) {
-			const url = `${searchOptions.url}/collection?key=${searchOptions.key}&q=${searchString}&ps=50`;
+			const url = `${searchOptions.url}/characters?name=$${searchString}`;
 			fetch(url)
 				.then((res) => res.json())
 				.then((res) => {
