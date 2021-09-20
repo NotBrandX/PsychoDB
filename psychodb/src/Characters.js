@@ -39,7 +39,6 @@ const Characters = ({ images }) => {
 	const getDetail = (name) => {
 		Axios.get(`https://psychonauts-api.herokuapp.com/api/characters?name=${name}`)
 			.then((res) => {
-				console.log(res);
 				setActiveItem(res.data)
 				handleShow();
 			})

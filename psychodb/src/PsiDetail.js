@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
 const PsiDetail = ({ error, psiDetail, show, handleClose }) => {
-	console.log("console log", psiDetail)
 	if (!error) {
 		return (
 			<Modal
