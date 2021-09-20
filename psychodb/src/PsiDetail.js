@@ -17,7 +17,7 @@ const PsiDetail = ({ error, psiDetail, show, handleClose }) => {
 				{psiDetail.img && <Image fluid src={psiDetail.img} />}
 				<Modal.Body>
 					<h1>{psiDetail.name}</h1>
-					<h4>Description:{psiDetail.description}</h4>
+					<h4>Description: {psiDetail.description}</h4>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>

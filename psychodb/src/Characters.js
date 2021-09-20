@@ -46,7 +46,9 @@ const Characters = ({ images }) => {
 				handleError();
 			});
 	}
-
+	if (!images.length) {
+		return (null)
+	}
 	return (
 		<CardColumns>
 			{images.map((object) => {

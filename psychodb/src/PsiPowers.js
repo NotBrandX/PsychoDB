@@ -41,7 +41,6 @@ const PsiPowers = ({ images }) => {
 			`https://psychonauts-api.herokuapp.com/api/powers?name=${name}`
 		)
 			.then((res) => {
-				console.log(res);
 				setActiveItem(res.data);
 				handleShow();
 			})
@@ -49,7 +48,9 @@ const PsiPowers = ({ images }) => {
 				handleError();
 			});
 	};
-
+	if (!images.length) {
+		return null;
+	}
 	return (
 		<CardColumns>
 			{images.map((object) => {
