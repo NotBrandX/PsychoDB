@@ -14,18 +14,13 @@ const Detail = ({ error, characterDetail, show, handleClose }) => {
 				<Modal.Header closeButton>
 					<Modal.Title>{characterDetail.name}</Modal.Title>
 				</Modal.Header>
-				{characterDetail.img && (
-					<Image fluid src={characterDetail.img} />
-				)}
+				{characterDetail.img && <Image fluid src={characterDetail.img} />}
 				<Modal.Body>
 					<h1>{characterDetail.name}</h1>
-					<h4>Gender:</h4>
-						<h4>PSI-Powers</h4>
-						{characterDetail.psiPowers.map? (
-							characterDetail.psiPowers.map
-						) : (
-							<span style={{ fontStyle: 'italic' }}>Not available</span>
-						)}
+					<h4>Gender: {characterDetail.gender}</h4>
+					<h4>PSI-Powers:{characterDetail.psiPowers.map(psiPower => {
+						return <p>{psiPower.name}</p>
+					})}</h4>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
@@ -36,7 +31,7 @@ const Detail = ({ error, characterDetail, show, handleClose }) => {
 		);
 	} else {
 		return (
-			<Modal
+			<Modal 
 				size='xl'
 				show={show}
 				onHide={handleClose}

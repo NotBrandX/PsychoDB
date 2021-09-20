@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
 const PsiDetail = ({ error, psiDetail, show, handleClose }) => {
+	console.log("console log", psiDetail)
 	if (!error) {
 		return (
 			<Modal
@@ -12,19 +13,12 @@ const PsiDetail = ({ error, psiDetail, show, handleClose }) => {
 				onHide={handleClose}
 				size='xl'>
 				<Modal.Header closeButton>
-					<Modal.Title>{psiDetail.psiPowers.name}</Modal.Title>
+					<Modal.Title>{psiDetail.name}</Modal.Title>
 				</Modal.Header>
 				{psiDetail.img && <Image fluid src={psiDetail.img} />}
 				<Modal.Body>
 					<h1>{psiDetail.name}</h1>
-					<h4>Description:</h4>
-					<p>
-						{/* {psiDetail.psiPowers.description ? (
-							psiDetail.psiPowers.description
-						) : (
-							<span style={{ fontStyle: 'italic' }}>Not available</span>
-						)} */}
-					</p>
+					<h4>Description:{psiDetail.description}</h4>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
