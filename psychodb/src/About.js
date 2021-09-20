@@ -11,14 +11,14 @@ const About = () => {
 				<h1>About PsychoDB</h1>
 				<Image
 					fluid
-					src='https://www.gameinformer.com/sites/default/files/2021/05/13/76c2efb4/336_heromid.jpg'
-					alt='Razputin'
+					src='https://cdn.mos.cms.futurecdn.net/86d1996b05ea9a46c058bbac4864dc15-970-80.jpeg.webp'
+					alt='Raz'
 					style={{ paddingBottom: '1em' }}
 				/>
 				<p>
 					PsychoDB is an application for users to interact with the Psychonauts
-					API. The Psychonauts API contains information and images from the
-					video game series "Psychonauts".
+					API. The Psychonauts API contains information and images from the cult
+					classic video game Psychonauts.
 				</p>
 				<Button
 					variant='dark'
@@ -26,7 +26,7 @@ const About = () => {
 					target='_blank'
 					rel='noreferrer noopener'
 					style={{ marginTop: '1em' }}>
-					Check out the games
+					Check out the game
 				</Button>
 			</Container>
 		</Jumbotron>

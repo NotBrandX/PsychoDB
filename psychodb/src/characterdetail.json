@@ -139,5 +139,158 @@
       }
     ],
     "__v": 0
+  },
+  {
+    "gender": "female",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/milla-vodello.png",
+    "_id": "60b546b73972a945fb4332ca",
+    "name": "milla vodello",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b546b73972a945fb4332cb",
+        "name": "levitation"
+      },
+      {
+        "description": "Allows the user to strike things down using their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/marksmanship.png",
+        "_id": "60b546b73972a945fb4332cc",
+        "name": "marksmanship"
+      },
+      {
+        "description": "Allows the user to move objects with their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/telekinesis.png",
+        "_id": "60b546b73972a945fb4332cd",
+        "name": "telekinesis"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "female",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/lili-zanotto.png",
+    "_id": "60b5472a252ee849f566c5b7",
+    "name": "lili zanotto",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b5472a252ee849f566c5b8",
+        "name": "levitation"
+      },
+      {
+        "description": "Allows the user to strike things down using their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/marksmanship.png",
+        "_id": "60b5472a252ee849f566c5b9",
+        "name": "marksmanship"
+      },
+      {
+        "description": "Allows the user to move objects with their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/telekinesis.png",
+        "_id": "60b5472a252ee849f566c5ba",
+        "name": "telekinesis"
+      },
+      {
+        "description": "Allows the user to turn invisible for a short period of time.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/invisibility.png",
+        "_id": "60b5472a252ee849f566c5bb",
+        "name": "invisibility"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "male",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/sasha-nein.png",
+    "_id": "60b5477f252ee849f566c5bc",
+    "name": "sasha nein",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b5477f252ee849f566c5bd",
+        "name": "levitation"
+      },
+      {
+        "description": "Allows the user to strike things down using their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/marksmanship.png",
+        "_id": "60b5477f252ee849f566c5be",
+        "name": "marksmanship"
+      },
+      {
+        "description": "Allows the user to move objects with their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/telekinesis.png",
+        "_id": "60b5477f252ee849f566c5bf",
+        "name": "telekinesis"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "male",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/augustus-aquato.png",
+    "_id": "60b547b9252ee849f566c5c0",
+    "name": "augustus aquato",
+    "psiPowers": [
+      {
+        "description": "Allows the user to strike things down using their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/marksmanship.png",
+        "_id": "60b547b9252ee849f566c5c1",
+        "name": "marksmanship"
+      },
+      {
+        "description": "Allows the user to move objects with their mind.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/telekinesis.png",
+        "_id": "60b547b9252ee849f566c5c2",
+        "name": "telekinesis"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "female",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/chloe-barge.png",
+    "_id": "60b54841e5e37f508faf8e91",
+    "name": "chloe barge",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b54841e5e37f508faf8e92",
+        "name": "levitation"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "male",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/clem-foote.png",
+    "_id": "60b54863e5e37f508faf8e93",
+    "name": "clem foote",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b54863e5e37f508faf8e94",
+        "name": "levitation"
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "gender": "female",
+    "img": "https://psychonauts-api.herokuapp.com/images/api/characters/crystal-flowers-snagrash.png",
+    "_id": "60b5488fe5e37f508faf8e95",
+    "name": "crystal flowers snagrash",
+    "psiPowers": [
+      {
+        "description": "Allows the user to levitate using a levitation ball.",
+        "img": "https://psychonauts-api.herokuapp.com/images/api/levitation.png",
+        "_id": "60b5488fe5e37f508faf8e96",
+        "name": "levitation"
+      }
+    ],
+    "__v": 0
   }
 ]

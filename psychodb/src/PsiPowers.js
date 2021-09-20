@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
+import Axios from 'axios';
 import PsiDetail from './PsiDetail';
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner'
-import psiDetail from './psidetail.json'
 
 const PsiPowers = ({ images }) => {
 	if (!images) {
@@ -16,9 +16,11 @@ const PsiPowers = ({ images }) => {
 			<Spinner animation='border' variant='dark' size='sm' />
 		</Container>;
 	}
+	
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
 	const [activeItem, setActiveItem] = useState(null);
+	const [detail, setDetail] = useState(null);
 
 	const handleShow = () => {
 		setShow(true);
@@ -34,9 +36,18 @@ const PsiPowers = ({ images }) => {
 		setError(true);
 	};
 
-	const getDetail = (itemId) => {
-		setActiveItem(psiDetail);
-		handleShow();
+	const getDetail = (name) => {
+		Axios.get(
+			`https://psychonauts-api.herokuapp.com/api/powers?name=${name}`
+		)
+			.then((res) => {
+				console.log(res);
+				setActiveItem(res.data);
+				handleShow();
+			})
+			.catch((err) => {
+				handleError();
+			});
 	};
 
 	return (
@@ -47,7 +58,7 @@ const PsiPowers = ({ images }) => {
 						{object.img && (
 							<Card.Img
 								variant='top'
-								src={object.img ? object.img.url : ''}
+								src={object.img ? object.img : ''}
 								alt={object.name}
 							/>
 						)}
@@ -55,7 +66,7 @@ const PsiPowers = ({ images }) => {
 							{object.img ? '' : <Card.Title>No Image Available</Card.Title>}
 							<Card.Text className='text-muted'>{object.name}</Card.Text>
 							<Button
-								onClick={() => getDetail(object.id)}
+								onClick={() => getDetail(object.name)}
 								variant='outline-dark'>
 								Details
 							</Button>
@@ -65,7 +76,7 @@ const PsiPowers = ({ images }) => {
 			})}
 			{(activeItem || error) && (
 				<PsiDetail
-					psiDetail={activeItem}
+					characterDetail={activeItem}
 					show={show}
 					handleClose={handleClose}
 					error={error}

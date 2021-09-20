@@ -12,21 +12,15 @@ const Detail = ({ error, characterDetail, show, handleClose }) => {
 				onHide={handleClose}
 				size='xl'>
 				<Modal.Header closeButton>
-					<Modal.Title>{characterDetail.characterObject.name}</Modal.Title>
+					<Modal.Title>{characterDetail.name}</Modal.Title>
 				</Modal.Header>
-				{characterDetail.characterObject.img && (
-					<Image fluid src={characterDetail.characterObject.webImage.url} />
-				)}
+				{characterDetail.img && <Image fluid src={characterDetail.img} />}
 				<Modal.Body>
-					<p>{characterDetail.characterObject.label.makerLine}</p>
-					<h4>Description:</h4>
-					<p>
-						{characterDetail.characterObjectPage.plaqueDescription ? (
-							characterDetail.characterObjectPage.plaqueDescription
-						) : (
-							<span style={{ fontStyle: 'italic' }}>Not available</span>
-						)}
-					</p>
+					<h1>{characterDetail.name}</h1>
+					<h4>Gender: {characterDetail.gender}</h4>
+					<h4>PSI-Powers:{characterDetail.psiPowers.map(psiPower => {
+						return <p>{psiPower.name}</p>
+					})}</h4>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' onClick={handleClose}>
@@ -37,7 +31,7 @@ const Detail = ({ error, characterDetail, show, handleClose }) => {
 		);
 	} else {
 		return (
-			<Modal
+			<Modal 
 				size='xl'
 				show={show}
 				onHide={handleClose}
