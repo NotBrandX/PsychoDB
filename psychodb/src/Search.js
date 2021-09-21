@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import SearchForm from './SearchForm';
 import Container from 'react-bootstrap/Container';
 import Characters from './Characters';
-import PsiPowers from './PsiPowers'
+// import PsiPowers from './PsiPowers'
 
-function Search({ searchOptions }) {
+function Search({ searchOptions, setCharacterImagesState, imagesState }) {
 	const [searchObj, setSearchObj] = useState({query : "", criteria : ""})
 	const [searchString, setSearchString] = useState('');
 	const [lastSearch, setLastSearch] = useState('');
 	const [characterImages, setCharacterImages] = useState('');
-    const [psiImages, setPsiImages] = useState('');
+    // const [psiImages, setPsiImages] = useState('');
 	const [search, setSearch] = useState(false);
 	const [error, setError] = useState(false);
 
@@ -34,7 +34,9 @@ function Search({ searchOptions }) {
 					setLastSearch(searchString);
 					setSearch(true);
 					setSearchString('');
-					console.log(res)
+					setCharacterImagesState(res)
+					console.log('HEY', Array.isArray(res));
+					console.log('HET AGAIN', res);
 				})
 				.then((res) => {
 					if (!characterImages.length) {
@@ -46,7 +48,7 @@ function Search({ searchOptions }) {
 					setError(true);
 				});
 		}
-	};
+	}
 
 	return (
 		<Container>

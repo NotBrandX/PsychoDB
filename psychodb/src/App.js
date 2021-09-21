@@ -79,7 +79,10 @@ useEffect(() => {
 					<Route
 						exact
 						path='/search'
-						render={() => <Search searchOptions={searchOptions} />}
+						render={() => <Search 
+							setCharacterImagesState={setCharacterImages}
+							imagesState={characterImages}
+							searchOptions={searchOptions} />}
 					/>;
 					<Redirect path='*' to='/home' />
 				</Switch>
