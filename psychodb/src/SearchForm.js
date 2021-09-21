@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const SearchForm = ({ handleSubmit, handleChange, searchString }) => {
+const SearchForm = ({ searchObj, handleSubmit, handleChange, searchString }) => {
 	return (
 		<Form onSubmit={handleSubmit}>
 			<Row>
@@ -12,16 +12,28 @@ const SearchForm = ({ handleSubmit, handleChange, searchString }) => {
 					<Form.Group>
 						<Form.Control
 							size='sm'
-							placeholder='Search by any query'
+							placeholder='Type in search query'
 							type='text'
-							name='searchString'
+							name='query'
 							required
 							onChange={handleChange}
-							value={searchString}
+							value={searchObj.query}
+						/>
+						<Form.Control
+							size='sm'
+							placeholder='Set search criteria'
+							type='text'
+							name='criteria'
+							required
+							onChange={handleChange}
+							value={searchObj.criteria}
 						/>
 					</Form.Group>
+					{/* <Form.Group>
+					
+					</Form.Group> */}
 					<Form.Text className='text-muted'>
-						Search by character/power name, id or gender
+						Search by name or gender
 					</Form.Text>
 				</Col>
 				<Col md='auto'>

@@ -20,7 +20,6 @@ const PsiPowers = ({ images }) => {
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
 	const [activeItem, setActiveItem] = useState(null);
-	const [detail, setDetail] = useState(null);
 
 	const handleShow = () => {
 		setShow(true);
