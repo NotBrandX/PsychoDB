@@ -47,36 +47,54 @@ const PsiPowers = ({ images }) => {
 				handleError();
 			});
 	};
-	if (!images.length) {
-		return null;
-	}
 	return (
 		<CardColumns>
-			{images.map((object) => {
-				return (
-					<Card key={object.id}>
-						{object.img && (
-							<Card.Img
-								variant='top'
-								src={object.img ? object.img : ''}
-								alt={object.name}
-							/>
-						)}
-						<Card.Body>
-							{object.img ? '' : <Card.Title>No Image Available</Card.Title>}
-							<Card.Text className='text-muted'>{object.name}</Card.Text>
-							<Button
-								onClick={() => getDetail(object.name)}
-								variant='outline-dark'>
-								Details
-							</Button>
-						</Card.Body>
-					</Card>
-				);
-			})}
+			{Array.isArray(images) ? (
+				images.map((object) => {
+					return (
+						<Card key={object.id}>
+							{object.img && (
+								<Card.Img
+									variant='top'
+									src={object.img ? object.img : ''}
+									alt={object.name}
+								/>
+							)}
+							<Card.Body>
+								{object.img ? '' : <Card.Title>No Image Available</Card.Title>}
+								<Card.Text className='text-muted'>{object.name}</Card.Text>
+								<Button
+									onClick={() => getDetail(object.name)}
+									variant='outline-dark'>
+									Details
+								</Button>
+							</Card.Body>
+						</Card>
+					);
+				})
+			) : (
+				<Card key={images.id}>
+					{images && (
+						<Card.Img
+							variant='top'
+							src={images.img ? images.img : ''}
+							alt={images.name}
+						/>
+					)}
+					<Card.Body>
+						{images ? '' : <Card.Title>No Image Available</Card.Title>}
+						<Card.Text className='text-muted'>{images.name}</Card.Text>
+						<Button
+							onClick={() => getDetail(images.name)}
+							variant='outline-dark'>
+							Details
+						</Button>
+					</Card.Body>
+				</Card>
+			)}
 			{(activeItem || error) && (
 				<PsiDetail
-					psiDetail={activeItem}
+					characterDetail={activeItem}
 					show={show}
 					handleClose={handleClose}
 					error={error}

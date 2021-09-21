@@ -7,7 +7,7 @@ const Navigation = () => {
 	return (
 		<Navbar collapseOnSelect bg='warning' variant='light' expand='md'>
 			<Navbar.Brand as={Link} to='/home'>
-				<img src='https://i.imgur.com/6RkNOy4.png'></img>
+				<img src='https://i.imgur.com/6RkNOy4.png' alt='logo'></img>
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
