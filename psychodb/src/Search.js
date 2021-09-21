@@ -5,6 +5,7 @@ import Characters from './Characters';
 import PsiPowers from './PsiPowers'
 
 function Search({ searchOptions }) {
+	const [searchObj, setSearchObj] = useState({query : "", criteria : ""})
 	const [searchString, setSearchString] = useState('');
 	const [lastSearch, setLastSearch] = useState('');
 	const [characterImages, setCharacterImages] = useState('');
@@ -13,7 +14,8 @@ function Search({ searchOptions }) {
 	const [error, setError] = useState(false);
 
 	const handleChange = (event) => {
-		setSearchString(event.target.value);
+		// setSearchString(event.target.value);
+		setSearchObj({...searchObj, [event.target.name] : event.target.value })
 	};
 
 	const handleSubmit = (event) => {
@@ -22,16 +24,17 @@ function Search({ searchOptions }) {
 	};
 
 	const getData = (searchString) => {
-		if (searchString) {
-			const url = `${searchOptions.url}/characters?name=$${searchString}`;
+		if (searchObj.query) {
+			const url = `${searchOptions.url}/characters?${searchObj.criteria}=${searchObj.query}`;
 			fetch(url)
 				.then((res) => res.json())
 				.then((res) => {
 					setError(false);
-					setCharacterImages(res.artObjects);
+					setCharacterImages(res);
 					setLastSearch(searchString);
 					setSearch(true);
 					setSearchString('');
+					console.log(res)
 				})
 				.then((res) => {
 					if (!characterImages.length) {
@@ -51,6 +54,7 @@ function Search({ searchOptions }) {
 				handleChange={handleChange}
 				handleSubmit={handleSubmit}
 				searchString={searchString}
+				searchObj={searchObj}
 			/>
 			{setSearch && !error && (
 				<>

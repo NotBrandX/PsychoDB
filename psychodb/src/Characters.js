@@ -20,7 +20,6 @@ const Characters = ({ images }) => {
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
 	const [activeItem, setActiveItem] = useState(null);
-	const [detail, setDetail] = useState(null)
 
 	const handleShow = () => {
 		setShow(true);
@@ -35,7 +34,7 @@ const Characters = ({ images }) => {
 	const handleError = () => {
 		setError(true);
 	};
-
+	
 	const getDetail = (name) => {
 		Axios.get(`https://psychonauts-api.herokuapp.com/api/characters?name=${name}`)
 			.then((res) => {
@@ -46,12 +45,13 @@ const Characters = ({ images }) => {
 				handleError();
 			});
 	}
-	if (!images.length) {
+	if (!images?.length) {
 		return (null)
 	}
 	return (
 		<CardColumns>
-			{images.map((object) => {
+			{Array.isArray(images) ?
+			images.map((object) => {
 				return (
 					<Card key={object.id}>
 						{object.img && (
@@ -76,7 +76,28 @@ const Characters = ({ images }) => {
 						</Card.Body>
 					</Card>
 				);
-			})}
+			}) : <Card key={images.id}>
+						{images.img && (
+							<Card.Img
+								variant='top'
+								src={images.img ? images.img : ''}
+								alt={images.name} 
+							/>
+						)}
+						<Card.Body>
+							{images.img ? (
+								''
+							) : (
+								<Card.Title>No Image Available</Card.Title>
+							)}
+							<Card.Text className='text-muted'>{images.name}</Card.Text>
+							<Button
+								onClick={() => getDetail(images.name)}
+								variant='outline-dark'>
+								Details
+							</Button>
+						</Card.Body>
+					</Card>}
 			{(activeItem || error) && (
 				<Detail
 					characterDetail={activeItem}
