@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import SearchForm from './SearchForm';
 import Container from 'react-bootstrap/Container';
+import { useHistory } from 'react-router-dom';
 import Characters from './Characters';
-// import PsiPowers from './PsiPowers'
 
 function Search({ searchOptions, setCharacterImagesState, imagesState }) {
 	const [searchObj, setSearchObj] = useState({query : "", criteria : ""})
 	const [searchString, setSearchString] = useState('');
 	const [lastSearch, setLastSearch] = useState('');
 	const [characterImages, setCharacterImages] = useState('');
-    // const [psiImages, setPsiImages] = useState('');
 	const [search, setSearch] = useState(false);
 	const [error, setError] = useState(false);
-
+	const history = useHistory()
 	const handleChange = (event) => {
-		// setSearchString(event.target.value);
 		setSearchObj({...searchObj, [event.target.name] : event.target.value })
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		getData(searchString);
+		history.push("/characters")
 	};
 
 	const getData = (searchString) => {
@@ -49,6 +48,7 @@ function Search({ searchOptions, setCharacterImagesState, imagesState }) {
 	}
 
 	return (
+		
 		<Container>
 			<SearchForm
 				handleChange={handleChange}

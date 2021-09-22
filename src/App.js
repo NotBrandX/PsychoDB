@@ -61,7 +61,6 @@ useEffect(() => {
 							<Characters
 								images={characterImages}
 								searchOptions={searchOptions}
-                // getCharacterImages={getCharacterImages}
 							/>
 						)}
 					/>
@@ -72,7 +71,6 @@ useEffect(() => {
 							<PsiPowers 
               images={psiImages} 
               searchOptions={searchOptions} 
-              // getPsiImages={getPsiImages}
               />
 						)}
 					/>

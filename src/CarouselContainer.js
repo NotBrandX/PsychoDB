@@ -10,8 +10,6 @@ const CarouselContainer = ({ data }) => {
 						<img
 							className='d-block w-100'
 							style={{
-								// height: '90vh',
-								// width: '100%',
 								objectFit: 'cover',
 								overflow: 'hidden',
 								background: 'gray',

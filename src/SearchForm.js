@@ -30,7 +30,7 @@ const SearchForm = ({ searchObj, handleSubmit, handleChange, searchString }) => 
 						/>
 					</Form.Group>
 					<Form.Text className='text-muted'>
-						Search by name or gender
+						Search for characters by name or gender
 					</Form.Text>
 				</Col>
 				<Col md='auto'>
