@@ -28,7 +28,7 @@ You're good to go!
 
 ## Screenshot
 
-![PsychoDB Screenschot](https://user-images.githubusercontent.com/56131542/134267860-6ee4b036-075f-45f6-b200-87c8b6abf399.png)
+![PyschoDB Screenshot](https://user-images.githubusercontent.com/56131542/134385489-d508d690-fa5a-4f8b-89df-67dfd026b818.png)
 
 ## Contribution Guidelines
 
