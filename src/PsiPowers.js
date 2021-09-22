@@ -94,7 +94,7 @@ const PsiPowers = ({ images }) => {
 			)}
 			{(activeItem || error) && (
 				<PsiDetail
-					characterDetail={activeItem}
+					psiDetail={activeItem}
 					show={show}
 					handleClose={handleClose}
 					error={error}
