@@ -51,7 +51,7 @@ const Characters = ({ images }) => {
 			{Array.isArray(images) ? (
 				images.map((object) => {
 					return (
-						<Card key={object.id}>
+						<Card key={object.name}>
 							{object.img && (
 								<Card.Img
 									variant='top'

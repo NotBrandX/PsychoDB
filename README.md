@@ -1,6 +1,6 @@
 ## Project Description
 
-My app is called PsychoDB. It will use the Psychonauts API to load information about the characters and abilities from the series. It’ll also have a search option so you can search for specific characters or abilities.
+My app is called PsychoDB. It will use the Psychonauts API to load information about the characters and abilities from the series. It’ll also have a search option so you can search for specific characters.
 
 View the app here: https://psychodb.herokuapp.com
 
