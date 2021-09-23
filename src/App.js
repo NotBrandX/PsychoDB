@@ -10,13 +10,13 @@ import Search from './Search';
 
 
 function App() {
-  const [searchOptions, setSearchOptions] = useState({
+  	const [searchOptions, setSearchOptions] = useState({
 		url: 'https://psychonauts-api.herokuapp.com/api',
 	});
-  const [characterImages, setCharacterImages] = useState([]);
-  const [psiImages, setPsiImages] = useState([]);
+	const [characterImages, setCharacterImages] = useState([]);
+	const [psiImages, setPsiImages] = useState([]);
 
-  const getCharacterImages = () => {
+  	const getCharacterImages = () => {
 		const url = `${searchOptions.url}/characters`;
 		fetch(url)
 			.then((res) => res.json())
@@ -27,21 +27,18 @@ function App() {
 
 	useEffect(() => {
 		getCharacterImages();
+		getPsiImages();
 	}, []);
   
-const getPsiImages = () => {
-	const url = `${searchOptions.url}/Powers`;
-	fetch(url)
-		.then((res) => res.json())
-		.then((res) => {
-			setPsiImages(res);
-		})
-		.catch(console.error);
-};
-
-useEffect(() => {
-	getPsiImages();
-}, []);
+	const getPsiImages = () => {
+		const url = `${searchOptions.url}/Powers`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+				setPsiImages(res);
+			})
+			.catch(console.error);
+	};
 
 	return (
 		<>
