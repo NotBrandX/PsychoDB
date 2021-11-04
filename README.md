@@ -2,7 +2,7 @@
 
 My app is called PsychoDB. It uses the Psychonauts API to load information about the characters and abilities from the series. It also has a search page so you can search for specific characters.
 
-View the app here: https://psychodb.herokuapp.com
+View the app here: https://psychodb.netlify.app/
 
 ## API used
 
