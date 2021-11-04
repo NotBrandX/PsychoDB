@@ -21,7 +21,7 @@ const SearchForm = ({ searchObj, handleSubmit, handleChange, searchString }) => 
 						/>
 						<Form.Control
 							size='sm'
-							placeholder='Set search criteria'
+							placeholder='Are you searching for a name or gender?'
 							type='text'
 							name='criteria'
 							required
